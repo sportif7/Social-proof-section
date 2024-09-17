@@ -1,0 +1,306 @@
+@font-face{
+        font-family:"League Spartan";
+        font-optical-sizing: auto;
+        font-weight:400;
+        font-style:normal;
+        src:url("./fonts/LeagueSpartan-Regular.ttf");
+}
+@font-face{
+        font-family:"League Spartan";
+        font-optical-sizing:auto;
+        font-weight:500;
+        font-style:normal;
+        src:url("./fonts/LeagueSpartan-Medium.ttf");
+}
+@font-face{
+        font-family:"League Spartan";
+        font-optical-sizing:auto;
+        font-weight:700;
+        font-style:normal;
+        src:url("./fonts/LeagueSpartan-Bold.ttf");
+}
+
+:root{
+/* ---- Primary colors ----- */
+--clr-primary-very-dark-magneta: hsl(300, 43%, 22%);
+--clr-soft-pink:hsl(333, 80%, 67%);
+
+/* ----- Neutral colors ----- */
+--clr-dark-grayish-magenta:hsl(303, 10%, 53%);
+--clr-light-grayish-magenta:hsl(300, 24%, 96%);
+--clr-white:hsl(0, 0%, 100%);     
+}
+
+/* ------- CSS Reset ------ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  * {
+    margin: 0;
+  }
+  
+  body {
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  ul{
+     padding:0;
+     list-style-type:none;
+  }
+
+
+  body{
+      position:relative;
+      min-height:100vh;
+      font-family:"League Spartan";
+      background-color:var(--clr-white);
+      display:grid;
+      place-content:center;
+  }
+
+  body::before{
+      content: "";
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      background-image:url("./images/bg-pattern-top-desktop.svg");
+      background-repeat:no-repeat;
+      background-position:left top;
+  }
+
+  body::after{
+      content: "";
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      background-image:url("./images/bg-pattern-bottom-desktop.svg");
+      background-repeat:no-repeat;
+      background-position:bottom right;
+  }
+
+  main{
+       max-width:1150px;
+       display:grid;
+       gap:4.5rem;
+  }
+
+  .top-section{
+      height:fit-content;
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:2rem;
+  }
+
+  .header{
+      display:grid;
+      height:fit-content;
+      grid-template-rows:auto auto;
+      gap:1.5rem;
+  }
+
+  .header h1{
+     color:var(--clr-primary-very-dark-magneta);
+     font-size:clamp(2.85rem, 6vw, 3.5625rem);
+     font-weight:700;
+     letter-spacing:-0.125rem;
+     max-width:360px;
+     line-height:0.85; 
+  }
+
+  .header p{
+     color:var(--clr-dark-grayish-magenta);
+     font-size:clamp(1.275rem, 6vw, 1.125rem);
+     font-weight:500;
+     max-width:450px;
+  }
+
+  .ratings{
+      display:grid;
+      gap:1rem;
+      align-content:center;
+      /* align-self:center;  <--- DOES THE SAME --- */
+  }
+
+  .rating-bar{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      background-color:var(--clr-light-grayish-magenta);
+      font-size:1.1975rem;
+      width:fit-content;
+      height:fit-content;
+      gap:2rem;
+      padding:1rem 0 1rem 2rem;
+      border-radius:0.5rem;
+      align-items:center;
+  }
+
+    .rating-bar:nth-of-type(1){
+      justify-self:start;
+      padding-right:4.5rem;
+    }
+    
+    .rating-bar:nth-of-type(2){
+      justify-self:center;
+      padding-right:4.5rem;
+    }
+
+    .rating-bar:nth-of-type(3){
+      justify-self:end;
+      padding-right:6.5rem;
+  }
+
+  .rating-bar ul{
+     display:grid;
+     grid-template-columns: repeat(5, 1fr);
+     gap:0.4rem;
+  }
+
+  blockquote{
+    color:var(--clr-primary-very-dark-magneta);
+    font-size:1.0625rem;
+    font-weight:700;
+}
+
+  .bottom-section{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:2rem;
+  }
+
+  .testimonial-card{
+      background-color:var(--clr-primary-very-dark-magneta);
+      display:grid;
+      grid-template-rows:auto 1fr;
+      height:fit-content;
+      gap:1.5rem;
+      font-size:1rem;
+      font-weight:500;
+      border-radius:0.469rem;
+      line-height:1.4;
+      padding:2rem;
+      padding-block:2.5rem;
+      padding-inline:2.5rem;
+  }
+
+  .testimonial-card:nth-of-type(2){
+    margin-top:1.25rem;
+  }
+
+  .testimonial-card:nth-of-type(3){
+    margin-top:2.5rem;
+  }
+
+  .testimonial-card p {
+      color:var(--clr-light-grayish-magenta);
+  }
+
+  .testimonial-card-header {
+      display:grid;
+      grid-template-columns:auto 1fr;
+      align-items:center;
+      gap:1.5rem;
+      line-height:1.2;
+  }
+
+  .testimonial-card-header img{
+      width:2.5rem;
+      height:2.5rem;
+      border-radius:2.5rem;
+  }
+
+  .testimonial-card-header span{
+      display:block;
+      font-weight:400;
+      color:var(--clr-soft-pink);
+  }
+
+  .person-name{
+      font-weight:700;
+  }
+
+  footer{
+       position:absolute;
+       left:50%;
+       bottom:2%;
+       transform:translateX(-50%);
+       font-size:0.625rem;
+       white-space:nowrap;
+  }
+
+  @media screen and (max-width:1300px){
+     body{
+      padding:16vw 6vw;
+     }
+   
+  }
+  @media screen and (max-width:950px){
+    .bottom-section{
+      grid-template-columns:1fr;
+      gap:1rem;
+     }
+  }
+
+  @media screen and (max-width:850px){
+      main{
+          gap:3rem;
+      }
+      .top-section{
+          grid-template-columns:1fr;
+          gap:1rem;
+      }
+
+      .header{
+          margin-inline:auto;
+          text-align:center;
+          margin-bottom:1rem;
+       }
+
+       .header h1{
+          margin-inline:auto;
+       } 
+    
+      .rating-bar{
+        grid-template-columns:1fr;
+        width:100%;
+        gap:0.5rem;
+        text-align:center;
+     }
+
+     .rating-bar:nth-of-type(n){
+      padding:0;
+      padding-block:0.75rem;
+    }
+
+       .rating-stars{
+        display:grid;
+        margin-inline:auto;
+        gap:0.75rem;
+    }
+
+     .testimonial-card:nth-of-type(n){
+        margin-top:0;
+     }
+  }
+
+
+   
