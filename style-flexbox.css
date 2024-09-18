@@ -118,12 +118,12 @@ main{
     display:flex;
     flex-direction:column;
     gap:1.5rem;
-    color:var(--clr-primary-very-dark-magneta);
 }
 
-.header h1{
+.header h1 {
     max-width:360px;
-    font-size:clamp(2.85rem, 6vw, 3.5625rem);
+    font-size:clamp(2.85rem, 6vw, 3.75rem);
+    color:var(--clr-primary-very-dark-magneta);
     font-weight:700;
     letter-spacing:-0.125rem;
     line-height:0.85; 
@@ -134,7 +134,7 @@ main{
     flex-shrink:1;
     max-width:450px;
     color:var(--clr-dark-grayish-magenta);
-    font-size:clamp(1.27rem, 6vw, 1.125rem);
+    font-size:clamp(1.15rem, 3.5vw, 1.20rem);
     font-weight:500;
 }
 
@@ -251,7 +251,6 @@ footer{
     white-space:nowrap; 
 }
 
-
 @media  (max-width:1250px){
       body{
          padding:13vw 5vw;
@@ -259,9 +258,7 @@ footer{
       .rating-bar:nth-of-type(n){
         padding:1rem; 
        }
-
-      }
-
+}
 @media (max-width:880px){
       .testimonial-card:nth-of-type(n){
         margin:0;
@@ -270,12 +267,10 @@ footer{
       .bottom-section{
         flex-direction:column;
         gap:1rem;
-     }
-      
       }
-
+}
+    
 @media (max-width:750px){
-
        main{
            gap:3rem;
        }
@@ -284,6 +279,11 @@ footer{
           flex-direction:column;
           gap:2rem;
       }
+
+      .bottom-section{
+        flex-direction:column;
+        gap:1rem;
+     }
 
       .header h1,
       .header p{
